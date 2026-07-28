@@ -1,5 +1,5 @@
 ﻿@using MDD4All.UI.DataModels.Tree
-@using MDD4All.DME.ViewModels
+@using MDD4All.DME.ViewModels.Editor
 @typeparam TNode
 
 <div class="uic-tree-row @(DataContext.IsSelected ? "is-selected" : "")" @onclick="@(() => OnSelectNode(DataContext))">
