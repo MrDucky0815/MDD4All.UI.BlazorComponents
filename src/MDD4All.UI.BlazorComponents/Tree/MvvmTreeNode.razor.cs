@@ -1,5 +1,5 @@
 using MDD4All.Reflection;
-using MDD4All.DME.ViewModels;
+using MDD4All.DME.ViewModels.Editor;
 using MDD4All.UI.BlazorComponents.Services;
 using MDD4All.UI.DataModels.DragDrop;
 using MDD4All.UI.DataModels.Tree;
