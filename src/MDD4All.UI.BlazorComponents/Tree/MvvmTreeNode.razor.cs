@@ -1,5 +1,3 @@
-using MDD4All.Reflection;
-using MDD4All.DME.ViewModels.Editor;
 using MDD4All.UI.BlazorComponents.Services;
 using MDD4All.UI.DataModels.DragDrop;
 using MDD4All.UI.DataModels.Tree;
@@ -30,6 +28,10 @@ namespace MDD4All.UI.BlazorComponents.Tree
 
         [Parameter]
         public bool ShowTreeIcons { get; set; } = true;
+
+        // Lets the caller supply type-symbol logic without MvvmTreeNode depending on app-specific types.
+        [Parameter]
+        public Func<ITreeNode, string>? TypeSymbolSelector { get; set; }
 
         protected override void OnInitialized()
         {
@@ -94,28 +96,7 @@ namespace MDD4All.UI.BlazorComponents.Tree
 
         private string GetTypeSymbol()
         {
-            if (DataContext is ObjectEditorViewModel viewModel)
-            {
-                switch (viewModel.TypeCategory)
-                {
-                    case TypeCategory.Simple:
-                    case TypeCategory.SimpleNullable:
-                        return "s";
-
-                    case TypeCategory.IList:
-                    case TypeCategory.Array:
-                    case TypeCategory.IDictionary:
-                        return "c";
-
-                    case TypeCategory.None:
-                        return "O";
-
-                    default:
-                        return "";
-                }
-            }
-
-            return "";
+            return TypeSymbolSelector?.Invoke(DataContext) ?? "";
         }
     }
 }

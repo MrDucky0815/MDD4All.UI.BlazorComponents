@@ -20,6 +20,9 @@ namespace MDD4All.UI.BlazorComponents.Tree
         [Parameter]
         public bool ShowTreeIcons { get; set; } = true;
 
+        [Parameter]
+        public Func<ITreeNode, string>? TypeSymbolSelector { get; set; }
+
         private void OnTreeNodeStateChanged()
         {
             InvokeAsync(() => StateHasChanged());

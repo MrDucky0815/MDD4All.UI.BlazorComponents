@@ -1,5 +1,4 @@
 ﻿@using MDD4All.UI.DataModels.Tree
-@using MDD4All.DME.ViewModels.Editor
 @typeparam TNode
 
 <div class="uic-tree-row @(DataContext.IsSelected ? "is-selected" : "")" @onclick="@(() => OnSelectNode(DataContext))">
@@ -35,7 +34,8 @@
                   DataContext="(ITreeNode)node"
                   TitleTemplate="TitleTemplate"
                   Style="Style"
-                  ShowTreeIcons="ShowTreeIcons" />
+                  ShowTreeIcons="ShowTreeIcons"
+                  TypeSymbolSelector="TypeSymbolSelector" />
 
         }
     </div>
