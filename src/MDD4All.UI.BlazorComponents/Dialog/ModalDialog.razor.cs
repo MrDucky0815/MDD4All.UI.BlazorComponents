@@ -20,6 +20,10 @@ namespace MDD4All.UI.BlazorComponents.Dialog
         [Parameter]
         public ModalDialogType DialogType { get; set; } = ModalDialogType.Ok;
 
+        // Wording of the confirming button. Empty keeps the dialog type's own label.
+        [Parameter]
+        public string ConfirmText { get; set; } = "";
+
         [Parameter]
         public bool CanConfirm 
         { 
@@ -34,6 +38,18 @@ namespace MDD4All.UI.BlazorComponents.Dialog
         protected override void OnInitialized()
         {
             
+        }
+
+        private string ConfirmLabel(string defaultLabel)
+        {
+            string result = defaultLabel;
+
+            if (!string.IsNullOrEmpty(ConfirmText))
+            {
+                result = ConfirmText;
+            }
+
+            return result;
         }
 
         private Task ModalCancel()
