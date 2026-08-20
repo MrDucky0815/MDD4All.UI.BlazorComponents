@@ -1,6 +1,6 @@
 ﻿<div class="form-check form-switch d-flex align-items-center gap-2 m-0 p-0 toggle-container">
 
-    <label class="stepper-label m-0" for="iconSwitch">Expolorericons</label>
+    <label class="stepper-label m-0" for="iconSwitch">@Label</label>
     
     <input class="form-check-input m-0" 
            type="checkbox" 
@@ -12,6 +12,9 @@
 </div>
 
 @code {
+    // The caller supplies the text, so the component works in any language.
+    [Parameter] public string Label { get; set; } = "Explorer icons";
+
     [Parameter] public bool Active { get; set; }
     [Parameter] public EventCallback<bool> ActiveChanged { get; set; }
 
