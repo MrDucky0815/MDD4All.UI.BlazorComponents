@@ -2,7 +2,7 @@
 
 <span class="dropdown">
     <button class="btn btn-light dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown">
-        <CountryFlag CountryCode="@LanguageSetter.CurrentCulture.Name"/> @LanguageSetter.CurrentCulture.DisplayName
+        <CountryFlag CountryCode="@LanguageSetter.CurrentCulture.Name"/> @LanguageSetter.CurrentCulture.NativeName
     </button>
 
     <ul class="dropdown-menu">
@@ -11,7 +11,7 @@
             string cultureID = cultureInfo.Name;
             <li>
             <a class="dropdown-item" @onclick="() => OnChangeLanguage(cultureID)">
-                 <CountryFlag CountryCode="@cultureInfo.Name" /> @cultureInfo.DisplayName
+                 <CountryFlag CountryCode="@cultureInfo.Name" /> @cultureInfo.NativeName
             </a>
         </li>
         }
