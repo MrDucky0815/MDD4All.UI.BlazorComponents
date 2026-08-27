@@ -120,4 +120,7 @@
   <data name="Button.Cancel" xml:space="preserve">
     <value>Abbruch</value>
   </data>
+  <data name="Button.Close" xml:space="preserve">
+    <value>Schließen</value>
+  </data>
 </root>

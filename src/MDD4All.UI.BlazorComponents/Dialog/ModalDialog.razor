@@ -5,7 +5,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">@Title</h4>
-                <button type="button" class="close" @onclick="@ModalCancel">&times;</button>
+                <button type="button" class="dialogClose" aria-label="@L["Button.Close"]"
+                        @onclick="@ModalCancel">
+                    <i class="bi bi-x-lg"></i>
+                </button>
             </div>
             <div class="modal-body" style="max-height:95%;">
                 @ChildContent

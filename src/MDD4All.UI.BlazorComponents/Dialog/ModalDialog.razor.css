@@ -1,0 +1,21 @@
+/* Same shape as the close button of the notification bar: no frame, an icon that darkens
+   on hover. Bootstrap 4's .close was still in the markup, and that class no longer exists
+   in 5.x - so the button carried no styling at all. */
+.dialogClose {
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    padding: 0 4px;
+    color: inherit;
+    opacity: 0.65;
+    cursor: pointer;
+}
+
+.dialogClose:hover {
+    opacity: 1;
+}
+
+.dialogClose:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+}
